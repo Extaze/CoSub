@@ -1,0 +1,41 @@
+/* GLOBAL STYLES */
+h1, h2, h3, h4, h5, h6, .lato {
+    font-family: 'Lato', sans-serif;
+    font-weight: 200;
+}
+
+.transition {
+    -webkit-transition: all .3s ease-out;
+       -moz-transition: all .3s ease-out;
+         -o-transition: all .3s ease-out;
+            transition: all .3s ease-out;
+}
+
+/* HEADER */
+.navbar-header > h1 {
+    font-size: 30px;
+    height: 75px;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.navbar-header > h1 > img {
+    margin-right: 10px;
+}
+
+.navbar-default .navbar-collapse > ul > li > a {
+    height: 75px;
+    line-height: 40px;
+    border-bottom: 2px solid transparent;
+}
+
+.navbar-default .navbar-collapse > ul > li > a:hover {
+    border-bottom: 2px solid #6FB5FF;
+}
+
+.navbar-default .navbar-collapse > ul > li.active > a, .navbar-default .navbar-collapse > ul > li.active > a:hover {
+    background-color: transparent;
+    color: #6FB5FF;
+    font-weight: 400;
+    border-bottom: 2px solid #6FB5FF;
+}

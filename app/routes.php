@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'HomeController@showIndex');
+Route::get('/login', 'HomeController@showLogin');
+Route::get('/register', 'HomeController@showRegister');
