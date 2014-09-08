@@ -11,7 +11,8 @@ return array(
     'email'         => 'Email',
     'email2'        => 'Please re-enter your email',
     'login'         => 'Login',
-    'signin'        => 'Sign in'
+    'signin'        => 'Sign in',
+    'yourrooms'     => 'Your Rooms'
 );
 
 ?>
