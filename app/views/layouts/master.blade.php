@@ -47,8 +47,15 @@
                 </div>
             </div>
         </div>
+
         <div class="container">
             @yield('content')
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <p class="text-muted">CoSub &copy; 2014. <a href="#">GitHub</a></p>
+            </div>
         </div>
         <script src="{{ asset('vendor/jquery/jquery-2.1.1.min.js') }}"></script>
         <script src="{{ asset('vendor/bootstrap/bootstrap.min.js') }}"></script>
