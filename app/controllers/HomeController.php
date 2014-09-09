@@ -15,19 +15,8 @@ class HomeController extends BaseController {
     |
     */
 
-    public function showIndex()
+    public function getIndex()
     {
         return View::make('index');
     }
-
-    public function showLogin()
-    {
-        return View::make('login');
-    }
-
-    public function showRegister()
-    {
-        return View::make('register');
-    }
-
 }

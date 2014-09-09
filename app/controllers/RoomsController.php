@@ -2,7 +2,7 @@
 
 class RoomsController extends Controller
 {
-    public function showUserRooms()
+    public function getUserRooms()
     {
         return View::make('rooms');
     }
