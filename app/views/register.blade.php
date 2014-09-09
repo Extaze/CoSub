@@ -29,15 +29,15 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="password2" class="col-sm-3 lato control-label">{{ trans('cosub.password2') }} :</label>
+            <label for="password_confirmation" class="col-sm-3 lato control-label">{{ trans('cosub.password_confirmation') }} :</label>
             <div class="col-sm-9">
-                <input type="password" name="password2" id="password2" class="form-control">
+                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control">
             </div>
         </div>
         <div class="form-group">
-            <label for="email" class="col-sm-3 lato control-label">{{ trans('cosub.email') }} :</label>
+            <label for="email_confirmation" class="col-sm-3 lato control-label">{{ trans('cosub.email_confirmation') }} :</label>
             <div class="col-sm-9">
-                <input type="email" name="email" id="email" class="form-control">
+                <input type="email" name="email_confirmation" id="email_confirmation" class="form-control">
             </div>
         </div>
         <div class="form-group">
