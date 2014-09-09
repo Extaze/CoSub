@@ -8,7 +8,7 @@ Route::group(['before' => ''], function () {
 // Route::group(['before' => 'auth'], function () {
     Route::group(['prefix' => '/user/'], function () {
         Route::get('/rooms', [
-            'as'   => 'rooms.user',
+            'as'   => 'user.rooms',
             'uses' => 'RoomsController@showUserRooms'
         ]);
         Route::get('/logout', [
