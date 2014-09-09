@@ -24,11 +24,7 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
-
-	'local' => array('battersea', 'po-gjuchault'),
-
-));
+require __DIR__.'/environment.php';
 
 /*
 |--------------------------------------------------------------------------
