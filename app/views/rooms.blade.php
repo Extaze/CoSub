@@ -9,10 +9,10 @@
         <a class="lato transition" href="{{ action('HomeController@showIndex') }}">HOME</a>
     </li>
     <li class="active">
-        <a class="lato transition" href="{{ action('UserController@showRooms') }}">ROOMS</a>
+        <a class="lato transition" href="{{ action('rooms.user') }}">ROOMS</a>
     </li>
     <li>
-        <a class="lato transition" href="{{ action('UserController@doLogout') }}">LOGOUT</a>
+        <a class="lato transition" href="{{ route('user.logout') }}">LOGOUT</a>
     </li>
 @stop
 
