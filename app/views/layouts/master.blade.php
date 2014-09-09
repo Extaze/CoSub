@@ -35,13 +35,13 @@
                     <ul class="nav navbar-nav">
                         @section('navbar')
                             <li class="active">
-                                <a class="lato transition" href="{{ action('HomeController@showIndex') }}">HOME</a>
+                                <a class="lato transition" href="{{ route('index') }}">HOME</a>
                             </li>
                             <li>
-                                <a class="lato transition" href="{{ action('HomeController@showLogin') }}">LOGIN</a>
+                                <a class="lato transition" href="{{ route('user.login') }}">LOGIN</a>
                             </li>
                             <li>
-                                <a class="lato transition" href="{{ action('HomeController@showRegister') }}">REGISTER</a>
+                                <a class="lato transition" href="{{ route('user.register') }}">REGISTER</a>
                             </li>
                         @show
                     </ul>

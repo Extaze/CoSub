@@ -6,7 +6,7 @@
 
 @section('navbar')
     <li>
-        <a class="lato transition" href="{{ action('HomeController@showIndex') }}">HOME</a>
+        <a class="lato transition" href="{{ route('index') }}">HOME</a>
     </li>
     <li class="active">
         <a class="lato transition" href="{{ route('user.rooms') }}">ROOMS</a>
