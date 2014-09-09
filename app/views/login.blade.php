@@ -16,9 +16,9 @@
     <h1>{{ trans('cosub.login') }}</h1>
     <form method="post" class="form-horizontal" role="form">
         <div class="form-group">
-            <label for="nickname" class="col-sm-3 lato control-label">{{ trans('cosub.nickname') }} :</label>
+            <label for="username" class="col-sm-3 lato control-label">{{ trans('cosub.username') }} :</label>
             <div class="col-sm-9">
-                <input type="text" name="nickname" id="nickname" class="form-control">
+                <input type="text" name="username" id="username" class="form-control">
             </div>
         </div>
         <div class="form-group">

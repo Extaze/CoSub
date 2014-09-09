@@ -5,7 +5,7 @@ return array(
     'subtitle'      => 'Collaborative Subtitling Tool',
     'lastestrooms'  => 'Lastest rooms',
     'login'         => 'Login',
-    'nickname'      => 'Nickname',
+    'username'      => 'Username',
     'password'      => 'Password',
     'password2'     => 'Please re-enter your password',
     'email'         => 'Email',
