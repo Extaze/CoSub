@@ -1,11 +1,15 @@
-<?php
+<?php namespace App\Http\Controllers;
 
-class UserController extends BaseController
+use Response;
+use Illuminate\Routing\Controller;
+use App\Http\Requests\RegisterFormRequest;
+
+class UserController extends Controller
 {
 
     public function getLogin()
     {
-        return View::make('login');
+        return view('login');
     }
 
     public function postLogin()
@@ -15,13 +19,13 @@ class UserController extends BaseController
 
     public function getRegister()
     {
-        return View::make('register');
+        return view('register');
     }
 
     public function postRegister(RegisterFormRequest $request)
     {
         var_dump($request);
-        return View::make('index');
+        return view('index');
     }
 
     public function postLogout()

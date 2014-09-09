@@ -2,13 +2,11 @@
 
 use Illuminate\Auth\UserTrait;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Auth\Reminders\RemindableTrait;
-use Illuminate\Contracts\Auth\User as UserContract;
-use Illuminate\Contracts\Auth\Remindable as RemindableContract;
+use Illuminate\Contracts\Auth\User as UserInterface;
 
-class User extends Model implements UserContract, RemindableContract {
+class User extends Model implements UserInterface {
 
-	use UserTrait, RemindableTrait;
+	use UserTrait;
 
 	/**
 	 * The database table used by the model.
@@ -22,6 +20,6 @@ class User extends Model implements UserContract, RemindableContract {
 	 *
 	 * @var array
 	 */
-	protected $hidden = ['password', 'remember_token'];
+	protected $hidden = ['password'];
 
 }
