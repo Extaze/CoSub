@@ -6,6 +6,10 @@ Route::get('/', [
 ]);
 
 Route::group(['before' => 'guest'], function() {
+    Route::get('/login', [
+        'as'   => 'user.login',
+        'uses' => 'UserController@getLogin'
+    ]);
     Route::post('/login', [
         'as'   => 'user.login',
         'uses' =>  'UserController@postLogin'
@@ -13,6 +17,10 @@ Route::group(['before' => 'guest'], function() {
     Route::get('/register', [
         'as'   => 'user.register',
         'uses' => 'UserController@getRegister'
+    ]);
+    Route::post('/register', [
+        'as'   => 'user.register',
+        'uses' => 'UserController@postRegister'    
     ]);
 });
 
