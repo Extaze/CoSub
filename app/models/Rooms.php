@@ -1,6 +1,7 @@
 <?php
 
-class Room extends Eloquent {
+class Room extends Eloquent
+{
     protected $table = 'rooms';
 }
 

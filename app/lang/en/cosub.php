@@ -7,9 +7,9 @@ return array(
     'login'         => 'Login',
     'username'      => 'Username',
     'password'      => 'Password',
-    'password2'     => 'Please re-enter your password',
+    'password_confirmation'     => 'Please re-enter your password',
     'email'         => 'Email',
-    'email2'        => 'Please re-enter your email',
+    'email_confirmation'        => 'Please re-enter your email',
     'login'         => 'Login',
     'signin'        => 'Sign in',
     'yourrooms'     => 'Your Rooms'
