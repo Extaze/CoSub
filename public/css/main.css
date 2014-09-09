@@ -53,6 +53,14 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 2px solid #6FB5FF;
 }
 
+/* CONTENT */
+#read {
+    position: absolute;
+    left: -9000;
+    opacity: 0;
+    float: left;
+}
+
 /* FOOTER */
 .footer {
     bottom: 0;

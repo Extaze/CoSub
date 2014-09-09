@@ -15,6 +15,7 @@
 @section('content')
     <h1>{{ trans('cosub.login') }}</h1>
     <form method="post" class="form-horizontal" role="form">
+        <input type="checkbox" name="read" id="read">
         <div class="form-group">
             <label for="username" class="col-sm-3 lato control-label">{{ trans('cosub.username') }} :</label>
             <div class="col-sm-9">
