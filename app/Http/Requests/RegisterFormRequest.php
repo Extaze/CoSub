@@ -10,13 +10,13 @@ class RegisterFormRequest extends FormRequest
         return [
             'username' => 'required|alpha_dash|between:5,100|unique:users',
             'email'    => 'required|email|confirmed|unique:users',
-            'password' => 'required|between:8,255|confirmed'
+            'password' => 'required|between:8,255|confirmed',
+            'language' => 'required|exists:languages,id'
         ];
     }
 
     public function authorize()
     {
-        exit(var_dump('passage'));
         return true;
     }
 }

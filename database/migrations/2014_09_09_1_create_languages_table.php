@@ -16,6 +16,7 @@ class CreateLanguagesTable extends Migration {
             $table->increments('id');
             // en, fr, uk, (ISO 639-1)
             $table->string('name', 2)->unique();
+            $table->string('fullname', 255)->unique();
             $table->timestamps();
         });
     }

@@ -41,9 +41,9 @@ Route::group(['before' => 'auth'], function () {
             'as'   => 'user.rooms',
             'uses' => 'RoomsController@getUserRooms'
         ]);
-        Route::post('/logout', [
+        Route::get('/logout', [
             'as'   => 'user.logout',
-            'uses' => 'UserController@postLogout'
+            'uses' => 'UserController@getLogout'
         ]);
     });
 });

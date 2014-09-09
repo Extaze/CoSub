@@ -14,6 +14,13 @@
 
 @section('content')
     <h1>{{ trans('cosub.login') }}</h1>
+    @if ($errors->any())
+        <p class="alert alert-danger">
+            @foreach($errors->all() as $error)
+                {{$error}}<br>
+            @endforeach
+        </p>
+    @endif
     <form action="{{ route('user.register') }}" method="post" class="form-horizontal" role="form">
         <input type="checkbox" name="read" id="read">
         <div class="form-group">
@@ -35,15 +42,25 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="email_confirmation" class="col-sm-3 lato control-label">{{ trans('cosub.email_confirmation') }} :</label>
+            <label for="email" class="col-sm-3 lato control-label">{{ trans('cosub.email') }} :</label>
             <div class="col-sm-9">
-                <input type="email" name="email_confirmation" id="email_confirmation" class="form-control">
+                <input type="email" name="email" id="email" class="form-control">
             </div>
         </div>
         <div class="form-group">
             <label for="email_confirmation" class="col-sm-3 lato control-label">{{ trans('cosub.email_confirmation') }} :</label>
             <div class="col-sm-9">
                 <input type="email" name="email_confirmation" id="email_confirmation" class="form-control">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="language" class="col-sm-3 lato control-label">{{ trans('cosub.language') }} :</label>
+            <div class="col-sm-9">
+                <select name="language" id="language" class="form-control">
+                    @foreach ($languages as $language)
+                        <option value="{{ $language->id }}">{{ $language->fullname }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <p class="col-sm-offset-3 col-sm-9">{{ trans('cosub.allFieldsRequired') }}</p>

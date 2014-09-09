@@ -14,6 +14,13 @@
 
 @section('content')
     <h1>{{ trans('cosub.login') }}</h1>
+    @if ($errors->any())
+        <p class="alert alert-danger">
+            @foreach($errors->all() as $error)
+                {{$error}}<br>
+            @endforeach
+        </p>
+    @endif
     <form method="post" class="form-horizontal" role="form">
         <div class="form-group">
             <label for="username" class="col-sm-3 lato control-label">{{ trans('cosub.username') }} :</label>

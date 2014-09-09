@@ -37,12 +37,21 @@
                             <li class="active">
                                 <a class="lato transition" href="{{ route('index') }}">{{ trans('cosub.menuHome') }}</a>
                             </li>
-                            <li>
-                                <a class="lato transition" href="{{ route('user.login') }}">{{ trans('cosub.menuLogin') }}</a>
-                            </li>
-                            <li>
-                                <a class="lato transition" href="{{ route('user.register') }}">{{ trans('cosub.menuRegister') }}</a>
-                            </li>
+                            @if (\Auth::check())
+                                <li>
+                                    <a class="lato transition" href="{{ route('user.rooms') }}">{{ trans('cosub.menuRooms') }}</a>
+                                </li>
+                                <li>
+                                    <a class="lato transition" href="{{ route('user.logout') }}">{{ trans('cosub.menuLogout') }}</a>
+                                </li>
+                            @else
+                                <li>
+                                    <a class="lato transition" href="{{ route('user.login') }}">{{ trans('cosub.menuLogin') }}</a>
+                                </li>
+                                <li>
+                                    <a class="lato transition" href="{{ route('user.register') }}">{{ trans('cosub.menuRegister') }}</a>
+                                </li>
+                            @endif
                         @show
                     </ul>
                 </div>

@@ -19,7 +19,10 @@ return array(
     'signin'                        => 'Sign in',
     'yourrooms'                     => 'Your Rooms',
     'allFieldsRequired'             => 'All fields are required.',
-    'toggleNavigation'              => 'Toggle navigation'
+    'toggleNavigation'              => 'Toggle navigation',
+    'bot'                           => 'You can not register if you are a bot.',
+    'failedAuth'                    => 'Failed to authenticate.',
+    'language'                      => 'Language'
 );
 
 ?>
