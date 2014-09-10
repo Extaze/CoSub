@@ -1,10 +1,11 @@
 <?php namespace App;
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Database\Eloquent\Model;
+use Hash;
 use Illuminate\Auth\Reminders\RemindableTrait;
-use Illuminate\Contracts\Auth\User as UserInterface;
+use Illuminate\Auth\UserTrait;
 use Illuminate\Contracts\Auth\Remindable as RemindableInterface;
+use Illuminate\Contracts\Auth\User as UserInterface;
+use Illuminate\Database\Eloquent\Model;
 
 class User extends Model implements UserInterface, RemindableInterface {
 
@@ -28,6 +29,6 @@ class User extends Model implements UserInterface, RemindableInterface {
 
 	public function setPasswordAttribute($password)
 	{
-		$this->attributes['password'] = \Hash::make($password);
+		$this->attributes['password'] = Hash::make($password);
 	}
 }

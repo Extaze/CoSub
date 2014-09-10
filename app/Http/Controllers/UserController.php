@@ -1,12 +1,12 @@
 <?php namespace App\Http\Controllers;
 
-use Response;
-use Illuminate\Routing\Controller;
-use Illuminate\Contracts\Auth\Authenticator;
-use App\User;
-use App\Language;
 use App\Http\Requests\LoginFormRequest;
 use App\Http\Requests\RegisterFormRequest;
+use App\Language;
+use App\User;
+use Illuminate\Contracts\Auth\Authenticator;
+use Illuminate\Routing\Controller;
+use Response;
 
 class UserController extends Controller
 {
