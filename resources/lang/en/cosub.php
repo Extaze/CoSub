@@ -1,6 +1,6 @@
 <?php
 
-return array(
+return [
 
     'subtitle'                      => 'Collaborative Subtitling Tool',
     'menuHome'                      => 'HOME',
@@ -23,6 +23,6 @@ return array(
     'bot'                           => 'You can not register if you are a bot.',
     'failedAuth'                    => 'Failed to authenticate.',
     'language'                      => 'Language'
-);
+];
 
 ?>

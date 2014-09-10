@@ -24,7 +24,7 @@ class User extends Model implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
-	protected $fillable = array('username', 'password', 'email', 'language');
+	protected $fillable = ['username', 'password', 'email', 'language'];
 
 	public function setPasswordAttribute($password)
 	{
