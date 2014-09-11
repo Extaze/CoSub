@@ -19,7 +19,7 @@ class CreateShowsTable extends Migration {
             $table->timestamp('started_at');
             // Null -> still going
             $table->timestamp('ended_at')->nullable();
-            $table->timestamp('duration');
+            $table->smallInteger('duration');
             $table->timestamps();
         });
 	}
