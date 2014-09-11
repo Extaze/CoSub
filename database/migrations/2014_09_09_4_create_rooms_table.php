@@ -15,7 +15,6 @@ class CreateRoomsTable extends Migration {
         Schema::create('rooms', function ($table) {
             $table->increments('id');
             $table->string('name', 255)->unique();
-            $table->string('description', 255);
             $table->integer('show')->unsigned();
             $table->integer('language')->unsigned();
             $table->integer('season')->unsigned()->nullable();
