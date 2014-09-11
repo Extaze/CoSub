@@ -13,11 +13,12 @@ class CreateSubsTable extends Migration {
     public function up()
     {
         Schema::create('subs', function ($table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->unsigned();
             $table->integer('room')->unsigned();
-            // timecode : 00:00:00,000
-            $table->string('timestart', 12);
-            $table->string('timeend', 12);
+            // mediumInteger => max 16777215
+            // 4h movie 60 fps => 864000
+            $table->mediumInteger('frame')->unsigned();
+            $table->float('fps')->unsigned();
             $table->text('original');
             $table->text('translated');
             $table->timestamps();
