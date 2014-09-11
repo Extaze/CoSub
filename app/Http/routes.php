@@ -16,6 +16,11 @@ Route::get('/', [
     'uses' => 'HomeController@getIndex'
 ]);
 
+Route::get('/rooms/{id}', [
+    'as'   => 'rooms.room',
+    'uses' => 'RoomsController@getRoom'
+]);
+
 Route::group(['before' => 'guest'], function() {
     Route::get('/login', [
         'as'   => 'user.login',
