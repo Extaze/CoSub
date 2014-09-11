@@ -8,4 +8,9 @@ class RoomsController extends Controller
     {
         return view('rooms');
     }
+
+    public function getRoom($id)
+    {
+        return \Response::make('Hey' . $id);
+    }
 }
