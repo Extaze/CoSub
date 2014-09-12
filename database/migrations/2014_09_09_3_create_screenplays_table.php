@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShowsTable extends Migration {
+class CreateScreenplaysTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateShowsTable extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('shows', function ($table) {
+        Schema::create('screenplays', function ($table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('network', 100);
@@ -31,7 +31,7 @@ class CreateShowsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('shows');
+		Schema::dropIfExists('screenplays');
 	}
 
 }

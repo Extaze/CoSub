@@ -8,6 +8,7 @@ class HomeController extends Controller
 {
     public function getIndex()
     {
+        var_dump(\App\Room::first()->show);
         if (Auth::check())
         {
             return view('index', [

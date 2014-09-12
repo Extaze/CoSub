@@ -2,8 +2,10 @@
 
 use App\Language;
 use App\Room;
+use App\RoomMember;
+use App\RoomRight;
 use App\User;
-use App\Show;
+use App\Screenplay;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -20,9 +22,11 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call('LanguageTableSeeder');
+        $this->call('RoomRightsTableSeeder');
         $this->call('UserTableSeeder');
-        $this->call('ShowTableSeeder');
+        $this->call('ScreenplayTableSeeder');
         $this->call('RoomTableSeeder');
+        $this->call('RoomMembersTableSeeder');
     }
 
 }
@@ -44,6 +48,29 @@ class LanguageTableSeeder extends Seeder
     }
 }
 
+class RoomRightsTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('room_rights')->delete();
+        RoomRight::create([
+            'name' => 'cosub.administrator'
+        ]);
+        RoomRight::create([
+            'name' => 'cosub.member'
+        ]);
+        RoomRight::create([
+            'name' => 'cosub.translater'
+        ]);
+        RoomRight::create([
+            'name' => 'cosub.timer'
+        ]);
+        RoomRight::create([
+            'name' => 'cosub.observer'
+        ]);
+    }
+}
+
 class UserTableSeeder extends Seeder
 {
     public function run()
@@ -58,12 +85,12 @@ class UserTableSeeder extends Seeder
     }
 }
 
-class ShowTableSeeder extends Seeder
+class ScreenplayTableSeeder extends Seeder
 {
     public function run()
     {
-        DB::table('shows')->delete();
-        Show::create([
+        DB::table('screenplays')->delete();
+        Screenplay::create([
             'name'       => 'Hannibal',
             'network'    => 'NBC',
             'started_at' => new DateTime('2013-04-04'),
@@ -79,10 +106,23 @@ class RoomTableSeeder extends Seeder
         DB::table('rooms')->delete();
         Room::create([
             'name'        => 'Hannibal S01E01 - Apéritif',
-            'show'        => 1,
+            'screenplay'        => 1,
             'language'    => 1,
             'season'      => '01',
             'episode'     => '01'
+        ]);
+    }
+}
+
+class RoomMembersTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('room_members')->delete();
+        RoomMember::create([
+            'user'   => 1,
+            'room'   => 1,
+            'rights' => 1
         ]);
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubsTable extends Migration {
+class CreateRoomMembersTable extends Migration {
 
     /**
      * Run the migrations.
@@ -12,18 +12,16 @@ class CreateSubsTable extends Migration {
      */
     public function up()
     {
-        Schema::create('subs', function ($table) {
-            $table->bigIncrements('id');
+        Schema::create('room_members', function ($table) {
+            $table->increments('id');
+            $table->integer('user')->unsigned();
             $table->integer('room')->unsigned();
-            // mediumInteger => max 16777215
-            // 4h movie 60 fps => 864000
-            $table->mediumInteger('frame')->unsigned();
-            $table->float('fps')->unsigned();
-            $table->text('original');
-            $table->text('translated');
+            $table->integer('rights')->unsigned();
             $table->timestamps();
 
+            $table->foreign('user')->references('id')->on('users');
             $table->foreign('room')->references('id')->on('rooms');
+            $table->foreign('rights')->references('id')->on('room_rights');
         });
     }
 
@@ -34,7 +32,7 @@ class CreateSubsTable extends Migration {
      */
     public function down()
     {
-        Schema::dropIfExists('subs');
+        Schema::dropIfExists('room_members');
     }
 
 }

@@ -15,13 +15,13 @@ class CreateRoomsTable extends Migration {
         Schema::create('rooms', function ($table) {
             $table->increments('id');
             $table->string('name', 255)->unique();
-            $table->integer('show')->unsigned();
+            $table->integer('screenplay')->unsigned();
             $table->integer('language')->unsigned();
             $table->integer('season')->unsigned()->nullable();
             $table->integer('episode')->unsigned()->nullable();
             $table->timestamps();
 
-            $table->foreign('show')->references('id')->on('shows');
+            $table->foreign('screenplay')->references('id')->on('screenplays');
             $table->foreign('language')->references('id')->on('languages');
         });
     }
