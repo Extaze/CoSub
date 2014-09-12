@@ -11,6 +11,8 @@
 |
 */
 
+Route::pattern('id', '[0-9]+');
+
 Route::get('/', [
     'as'   => 'index',
     'uses' => 'HomeController@getIndex'
@@ -42,7 +44,7 @@ Route::group(['before' => 'guest'], function() {
 
 Route::group(['before' => 'auth'], function () {
     Route::group(['prefix' => '/user/'], function () {
-        Route::get('/rooms', [
+        Route::get('/rooms/{id?}', [
             'as'   => 'user.rooms',
             'uses' => 'RoomsController@getUserRooms'
         ]);

@@ -16,12 +16,8 @@
     height: 40px;
     line-height: 40px;
     text-align: center;
-    width: 43px;
 }
 
-.sub-button:hover {
-    width: 40px;
-}
 .sub-button:nth-child(1):hover {
     border-right-color: #2ecc71;
 }

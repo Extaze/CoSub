@@ -22,7 +22,8 @@ return [
     'toggleNavigation'              => 'Toggle navigation',
     'bot'                           => 'You can not register if you are a bot.',
     'failedAuth'                    => 'Failed to authenticate.',
-    'language'                      => 'Language'
+    'language'                      => 'Language',
+    'roomNotFound'                  => 'Room not found.'
 ];
 
 ?>

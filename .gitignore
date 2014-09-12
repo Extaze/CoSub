@@ -1,9 +1,7 @@
 /vendor
 composer.phar
 composer.lock
+artisan
 .env.*
 .DS_Store
 Thumbs.db
-
-composer.lock
-artisan

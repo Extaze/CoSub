@@ -2,10 +2,10 @@
 
 @section('navbar')
     <li>
-        <a class="lato transition" href="{{ route('index') }}">HOME</a>
+        <a class="lato transition" href="{{ route('index') }}">{{ trans('cosub.menuHome') }}</a>
     </li>
     <li class="active">
-        <a class="lato transition" href="{{ route('user.login') }}">LOGIN</a>
+        <a class="lato transition" href="{{ route('user.login') }}">{{ trans('cosub.menuLogin') }}</a>
     </li>
     <li>
         <a class="lato transition" href="{{ route('user.register') }}">REGISTER</a>
