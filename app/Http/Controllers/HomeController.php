@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Room;
+use App\RoomMember;
 use Auth;
 use Illuminate\Routing\Controller;
 
@@ -8,11 +9,10 @@ class HomeController extends Controller
 {
     public function getIndex()
     {
-        var_dump(\App\Room::first()->show);
         if (Auth::check())
         {
             return view('index', [
-                'yourRooms' => Room::take(10)->get()
+                'yourRoomMembers' => RoomMember::where('user', '=', Auth::user()->id)->get()
             ]);
         }
         return view('index', [

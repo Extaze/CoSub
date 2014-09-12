@@ -18,7 +18,6 @@ class CreateSubsTable extends Migration {
             // mediumInteger => max 16777215
             // 4h movie 60 fps => 864000
             $table->mediumInteger('frame')->unsigned();
-            $table->float('fps')->unsigned();
             $table->text('original');
             $table->text('translated');
             $table->timestamps();

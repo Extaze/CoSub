@@ -8,16 +8,16 @@ class RoomMember extends Model
 
     public function user()
     {
-        return User::find($this->user);
+        return $this->belongsTo('\App\User', 'user', 'id')->get()->first();
     }
 
     public function room()
     {
-        return Room::find($this->room);
+        return $this->belongsTo('\App\Room', 'room', 'id')->get()->first();
     }
 
     public function rights()
     {
-        return RoomRight::find($this->rights);
+        return $this->belongsTo('\App\RoomRight', 'rights', 'id')->get()->first();
     }
 }

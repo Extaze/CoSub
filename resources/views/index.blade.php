@@ -9,11 +9,11 @@
         </p>
     @endif
     <h1>{{ trans('cosub.lastestrooms') }}</h1>
-    @if (isset($yourRooms))
+    @if (isset($yourRoomMembers))
         <ul class="yourRoomsList">
-            @foreach($yourRooms->all() as $yourRoom)
+            @foreach($yourRoomMembers->all() as $yourRoomMember)
                 <li>
-                    <a href="{{ route('user.rooms') }}">{{ $yourRoom->name }}</a>
+                    <a href="{{ route('user.rooms', [$yourRoomMember->room()->id]) }}">{{ $yourRoomMember->room()->name }}</a>
                 </li>
             @endforeach
         </ul>

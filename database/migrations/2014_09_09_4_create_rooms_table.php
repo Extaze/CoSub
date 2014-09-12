@@ -19,6 +19,7 @@ class CreateRoomsTable extends Migration {
             $table->integer('language')->unsigned();
             $table->integer('season')->unsigned()->nullable();
             $table->integer('episode')->unsigned()->nullable();
+            $table->float('fps')->unsigned();
             $table->timestamps();
 
             $table->foreign('screenplay')->references('id')->on('screenplays');

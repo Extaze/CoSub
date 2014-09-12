@@ -6,6 +6,7 @@ use App\RoomMember;
 use App\RoomRight;
 use App\User;
 use App\Screenplay;
+use App\Sub;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call('ScreenplayTableSeeder');
         $this->call('RoomTableSeeder');
         $this->call('RoomMembersTableSeeder');
+        $this->call('SubTableSeeder');
     }
 
 }
@@ -106,10 +108,11 @@ class RoomTableSeeder extends Seeder
         DB::table('rooms')->delete();
         Room::create([
             'name'        => 'Hannibal S01E01 - Apéritif',
-            'screenplay'        => 1,
+            'screenplay'  => 1,
             'language'    => 1,
             'season'      => '01',
-            'episode'     => '01'
+            'episode'     => '01',
+            'fps'         => 24.9
         ]);
     }
 }
@@ -123,6 +126,20 @@ class RoomMembersTableSeeder extends Seeder
             'user'   => 1,
             'room'   => 1,
             'rights' => 1
+        ]);
+    }
+}
+
+class SubTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('subs')->delete();
+        Sub::create([
+            'room'       => 1,
+            'frame'      => 1,
+            'original'   => 'Hi',
+            'translated' => 'Salut'
         ]);
     }
 }

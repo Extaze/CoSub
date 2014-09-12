@@ -8,6 +8,11 @@ class Room extends Model
 
     public function screenplay()
     {
-        return $this->belongsTo('\App\Screenplay', 'id', 'screenplay');
+        return $this->belongsTo('\App\Screenplay', 'screenplay', 'id')->get()->first();
+    }
+
+    public function language()
+    {
+        return $this->belongsTo('\App\Language', 'language', 'id')->get()->first();
     }
 }
