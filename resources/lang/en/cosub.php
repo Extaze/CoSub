@@ -23,7 +23,13 @@ return [
     'bot'                           => 'You can not register if you are a bot.',
     'failedAuth'                    => 'Failed to authenticate.',
     'language'                      => 'Language',
-    'roomNotFound'                  => 'Room not found.'
+    'roomNotFound'                  => 'Room not found.',
+    'allRooms'                      => 'See all rooms',
+    'rooms'                         => 'Rooms',
+    'roomName'                      => 'Name',
+    'roomShow'                      => 'Show',
+    'roomSeason'                    => 'Season',
+    'roomEpisode'                   => 'Episode'
 ];
 
 ?>

@@ -26,5 +26,6 @@
                 </li>
             @endforeach
         </ul>
+        <a href="{{ route('rooms.rooms') }}">{{ trans('cosub.allRooms') }}</a>
     @endif
 @stop
