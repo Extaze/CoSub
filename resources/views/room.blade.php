@@ -8,11 +8,11 @@
     <li>
         <a class="lato transition" href="{{ route('index') }}">{{ trans('cosub.menuHome') }}</a>
     </li>
-    <li class="active">
-        <a class="lato transition" href="{{ route('rooms.rooms') }}">{{ trans('cosub.menuRooms') }}</a>
+    <li>
+        <a class="lato transition" href="{{ route('user.login') }}">{{ trans('cosub.menuLogin') }}</a>
     </li>
     <li>
-        <a class="lato transition" href="{{ route('user.logout') }}">{{ trans('cosub.menuLogout') }}</a>
+        <a class="lato transition" href="{{ route('user.register') }}">{{ trans('cosub.menuRegister') }}</a>
     </li>
 @stop
 
@@ -25,7 +25,7 @@
             @endforeach
         </p>
     @endif
-    <p>Member mode</p>
+    <p>Guest mode</p>
     <div class="sub row">
         <div class="sub-buttons">
             <div class="sub-button transition"><i class="fa fa-comments"></i></div>

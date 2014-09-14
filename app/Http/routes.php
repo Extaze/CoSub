@@ -23,6 +23,11 @@ Route::get('/rooms/{id}', [
     'uses' => 'RoomsController@getRoom'
 ]);
 
+Route::get('/rooms/', [
+    'as'   => 'rooms.rooms',
+    'uses' => 'RoomsController@getRooms'
+]);
+
 Route::group(['before' => 'guest'], function() {
     Route::get('/login', [
         'as'   => 'user.login',
@@ -44,10 +49,6 @@ Route::group(['before' => 'guest'], function() {
 
 Route::group(['before' => 'auth'], function () {
     Route::group(['prefix' => '/user/'], function () {
-        Route::get('/rooms/{id?}', [
-            'as'   => 'user.rooms',
-            'uses' => 'RoomsController@getUserRooms'
-        ]);
         Route::get('/logout', [
             'as'   => 'user.logout',
             'uses' => 'UserController@getLogout'

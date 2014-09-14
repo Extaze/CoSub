@@ -31,4 +31,17 @@ class User extends Model implements UserInterface, RemindableInterface {
 	{
 		$this->attributes['password'] = Hash::make($password);
 	}
+
+	public function isInRoom($roomId = null)
+	{
+		if ($roomId === null) {
+			return false;
+		}
+
+		if ($this->id === null) {
+			return false;
+		}
+
+		return (RoomMember::where('room', '=', 1)->where('user', '=', 1)->count() === 1);
+	}
 }

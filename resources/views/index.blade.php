@@ -4,7 +4,7 @@
     @if ($errors->any())
         <p class="alert alert-danger">
             @foreach($errors->all() as $error)
-                {{$error}}<br>
+                {{ $error }}<br>
             @endforeach
         </p>
     @endif
@@ -13,7 +13,7 @@
         <ul class="yourRoomsList">
             @foreach($yourRoomMembers->all() as $yourRoomMember)
                 <li>
-                    <a href="{{ route('user.rooms', [$yourRoomMember->room()->id]) }}">{{ $yourRoomMember->room()->name }}</a>
+                    <a href="{{ route('rooms.room', [$yourRoomMember->room()->id]) }}">{{ $yourRoomMember->room()->name }}</a>
                 </li>
             @endforeach
         </ul>

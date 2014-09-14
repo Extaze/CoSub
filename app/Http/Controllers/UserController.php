@@ -4,6 +4,8 @@ use App\Http\Requests\LoginFormRequest;
 use App\Http\Requests\RegisterFormRequest;
 use App\Language;
 use App\User;
+use App\Room;
+use Auth;
 use Illuminate\Contracts\Auth\Authenticator;
 use Illuminate\Routing\Controller;
 use Response;

@@ -1,33 +1,37 @@
 <?php namespace App\Http\Controllers;
 
+use Auth;
 use App\Room;
+use App\User;
 use Illuminate\Routing\Controller;
 
 class RoomsController extends Controller
 {
-    public function getUserRooms($id = null)
+    public function getRoom($id)
     {
-        if ($id === null)
-        {
-            return view('rooms');
-        }
-
         $room = Room::find($id);
 
-        if ($room === null)
-        {
-            return redirect('/user/rooms/')->withErrors([
+        if ($room === null) {
+            return redirect('/rooms/')->withErrors([
                 'room' => trans('cosub.roomNotFound')
             ]);
         }
 
-        return view('userRoom', [
-            'room' => Room::find($id)
+        if (Auth::check() && Auth::user()->isInRoom($room->id)) {
+            return view('userRoom', [
+                'id' => $id
+            ]);
+        }
+
+        return view('room', [
+            'room' => $room
         ]);
     }
 
-    public function getRoom($id)
+    public function getRooms()
     {
-        return \Response::make('Hey' . $id);
+        return view('rooms', [
+            'rooms' => Room::paginate(15)
+        ]);
     }
 }

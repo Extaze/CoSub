@@ -39,7 +39,7 @@
                             </li>
                             @if (\Auth::check())
                                 <li>
-                                    <a class="lato transition" href="{{ route('user.rooms') }}">{{ trans('cosub.menuRooms') }}</a>
+                                    <a class="lato transition" href="{{ route('rooms.rooms') }}">{{ trans('cosub.menuRooms') }}</a>
                                 </li>
                                 <li>
                                     <a class="lato transition" href="{{ route('user.logout') }}">{{ trans('cosub.menuLogout') }}</a>
