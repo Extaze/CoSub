@@ -39,18 +39,17 @@
         </p>
     @endif
     <div class="modeButtons">
-        <h2 class="active">
+        <h3 class="active">
             <a href="#" class="buttonDetail">{{ trans('cosub.detailMode') }}</a>
             <div class="bottomSep transition"></div>
-        </h2>
+        </h3>
         <span class="sep"></span>
-        <h2>
+        <h3>
             <a href="#" class="buttonTranslate">{{ trans('cosub.translateMode') }}</a>
             <div class="bottomSep transition"></div>
-        </h2>
+        </h3>
     </div>
-    <div class="page page1 transition active">
-        <p>Member mode</p>
+    <div class="container page page1 transition active">
         <div class="row">
             <div class="col-xs-4 text-center">
                 <canvas class="pie" id="pie-progress" width="110" height="110"></canvas>
