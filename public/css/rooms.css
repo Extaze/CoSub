@@ -63,7 +63,7 @@
 }
 
 .page2 {
-    top: -130px;
+    top: -420px;
     opacity: 0;
 }
 
@@ -76,6 +76,10 @@
 @media (min-width: 500px) {
     .page1 > .row > .col-xs-4 {
        float: left;
+    }
+
+    .page2 {
+        top: -130px;
     }
 }
 
