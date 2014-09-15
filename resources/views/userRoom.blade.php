@@ -6,9 +6,9 @@
 @stop
 
 @section('js')
-    <script>window.locked = 90;</script>
-    <script>window.progress = 90;</script>
-    <script>window.errors = 90;</script>
+    <script>window.progress = {{ $progressPercent }};</script>
+    <script>window.errors = {{ $errorsPercent }};</script>
+    <script>window.locked = {{ $lockedPercent }};</script>
     <script src="{{ asset('vendor/chartjs/chart.min.js') }}"></script>
     <script src="{{ asset('js/rooms.js') }}"></script>
 @stop

@@ -10,6 +10,7 @@ class RoomsController extends Controller
     public function getRoom($id)
     {
         $room = Room::find($id);
+        $subs = $room->subs();
 
         if ($room === null) {
             return redirect('/rooms/')->withErrors([
@@ -17,14 +18,29 @@ class RoomsController extends Controller
             ]);
         }
 
-        if (Auth::check() && Auth::user()->isInRoom($room->id)) {
-            return view('userRoom', [
-                'room' => $room
-            ]);
+        $view = (Auth::check() && Auth::user()->isInRoom($room->id)) ? 'userRoom' : 'room';
+
+        $progressCount = 0;
+        $errorsCount = 0;
+        $lockedCount = 0;
+        $totalSubs = count($subs);
+
+        foreach($subs as $sub) {
+            if ($sub->status === 'checked') {
+                ++$progressCount;
+            } else if ($sub->status === 'wrong') {
+                ++$errorsCount;
+            } else if ($sub->status === 'locked') {
+                ++$lockedCount;
+            }
         }
 
-        return view('room', [
-            'room' => $room
+        return view($view, [
+            'room' => $room,
+            'subs' => $subs,
+            'progressPercent' => $progressCount / $totalSubs * 100,
+            'errorsPercent' => $errorsCount / $totalSubs * 100,
+            'lockedPercent' =>$lockedCount / $totalSubs * 100
         ]);
     }
 

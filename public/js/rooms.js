@@ -25,6 +25,7 @@ $buttonTranslate.click(function (e) {
 
 // Charts
 var options = {
+    segmentStrokeWidth: 0,
     percentageInnerCutout : 75,
     animateRotate : false,
     animateScale : false,
@@ -44,9 +45,9 @@ function showPie (elem, from, color) {
         highlight: color
     }, {
         value: 100 - parseInt(from, 10),
-        color: '#FFF',
-        highlight: '#FFF'
-    }]
+        color: '#DEDEDE',
+        highlight: '#CCC'
+    }];
     new Chart(pie).Doughnut(data, options);
 }
 
