@@ -15,4 +15,9 @@ class Room extends Model
     {
         return $this->belongsTo('\App\Language', 'language', 'id')->get()->first();
     }
+
+    public function subs()
+    {
+        return $this->hasMany('\App\Sub', 'room', 'id')->get();
+    }
 }

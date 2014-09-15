@@ -20,6 +20,14 @@ class CreateSubsTable extends Migration {
             $table->mediumInteger('frame')->unsigned();
             $table->text('original');
             $table->text('translated');
+            $table->enum('status', [
+                'original',
+                'translated',
+                'checked',
+                'wrong',
+                'locked'
+            ]);
+            $table->boolean('timed');
             $table->timestamps();
 
             $table->foreign('room')->references('id')->on('rooms');
