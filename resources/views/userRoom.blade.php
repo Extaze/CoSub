@@ -3,6 +3,7 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/rooms.css') }}">
     <link rel="stylesheet" href="{{ asset('css/subs.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/animate.css/animate.css') }}">
 @stop
 
 @section('js')
@@ -49,7 +50,7 @@
             <div class="bottomSep transition"></div>
         </h3>
     </div>
-    <div class="container page page1 transition active">
+    <div class="container page page1">
         <div class="row">
             <div class="col-xs-4 text-center">
                 <canvas class="pie" id="pie-progress" width="110" height="110"></canvas>
@@ -65,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="page page2 transition">
+    <div class="page page2">
         <div class="sub row">
             <div>
                 <div class="sub-text col-sm-6">

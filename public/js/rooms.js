@@ -2,25 +2,25 @@ var $buttonDetail    = $('.buttonDetail');
 var $buttonTranslate = $('.buttonTranslate');
 var $page1           = $('.page1');
 var $page2           = $('.page2');
-var $h2              = $('.modeButtons > h2');
+var $h3              = $('.modeButtons > h3');
 var $pieProgress     = $('#pie-progress')
 var $pieErrors       = $('#pie-errors')
 var $pieLocked       = $('#pie-locked')
 
 $buttonDetail.click(function (e) {
     e.preventDefault();
-    $page1.addClass('active');
-    $page2.removeClass('active');
-    $h2.first().addClass('active');
-    $h2.last().removeClass('active');
+    $h3.first().addClass('active');
+    $h3.last().removeClass('active');
+    $page1.removeClass('fadeOutLeft').addClass('animated fadeInLeft');
+    $page2.addClass('animated fadeOutLeft');
 });
 
 $buttonTranslate.click(function (e) {
     e.preventDefault();
-    $page1.removeClass('active');
-    $page2.addClass('active');
-    $h2.first().removeClass('active');
-    $h2.last().addClass('active');
+    $h3.first().removeClass('active');
+    $h3.last().addClass('active');
+    $page1.addClass('animated fadeOutLeft');
+    $page2.removeClass('fadeOutLeft').addClass('animated fadeInLeft');
 });
 
 // Charts
