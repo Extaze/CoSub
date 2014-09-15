@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}">
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400,700">
 
+        <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+
         <link rel="stylesheet" href="{{ asset('css/main.css') }}">
         @yield('css')
     </head>

@@ -29,7 +29,18 @@ return [
     'roomName'                      => 'Name',
     'roomShow'                      => 'Show',
     'roomSeason'                    => 'Season',
-    'roomEpisode'                   => 'Episode'
+    'roomEpisode'                   => 'Episode',
+    'setAs'                         => 'Set as :',
+    'lock'                          => 'Locked',
+    'wrong'                         => 'Wrong',
+    'timed'                         => 'Timed',
+    'checked'                       => 'Checked',
+    'detailMode'                    => 'Room details',
+    'translateMode'                 => 'Translation',
+    'translate'                     => 'Translate',
+    'pie-progress'                  => 'Progress',
+    'pie-errors'                    => 'Errors',
+    'pie-locked'                    => 'Locked'
 ];
 
 ?>

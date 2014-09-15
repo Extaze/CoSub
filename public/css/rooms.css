@@ -1,0 +1,83 @@
+/* CONTAINER */
+.container {
+    overflow: hidden;
+}
+
+/* ROOMS HEADER */
+.modeButtons {
+    text-align: center;
+}
+
+.modeButtons > h2 {
+    display: inline-block;
+}
+
+.modeButtons > h2 > .bottomSep {
+    height: 1px;
+    background-color: #6FB5FF;
+    left: -5px;
+    position: relative;
+    top: 4px;
+    width: 0;
+}
+
+.modeButtons > h2:first-child > .bottomSep {
+    left: calc(100% + 5px);
+}
+
+.modeButtons > h2:hover > a {
+    text-decoration: none;
+}
+
+.modeButtons > h2 > a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+.modeButtons > h2:first-child:hover > .bottomSep, .modeButtons > h2:first-child.active > .bottomSep {
+    left: -5px;
+    width: calc(100% + 10px);
+}
+
+.modeButtons > h2:last-child:hover > .bottomSep, .modeButtons > h2.active > .bottomSep {
+    width: calc(100% + 10px);
+}
+
+.modeButtons > .sep {
+    border-right: 1px solid #6FB5FF;
+    display: inline-block;
+    height: 40px;
+    position: relative;
+    top: 10px;
+}
+
+/* ROOM PAGE */
+.page {
+    position: relative;
+}
+
+.page1 {
+    left: -100%;
+    opacity: 0;
+}
+
+.page1.active {
+    left: 0;
+    opacity: 1;
+}
+
+.page2 {
+    left: 0;
+    opacity: 1;
+}
+
+.page1.active + .page2 {
+    left: 100%;
+    opacity: 0;
+}
+
+/* PIES */
+canvas + p {
+    position: relative;
+    top: -70px;
+}

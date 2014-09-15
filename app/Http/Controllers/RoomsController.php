@@ -19,7 +19,7 @@ class RoomsController extends Controller
 
         if (Auth::check() && Auth::user()->isInRoom($room->id)) {
             return view('userRoom', [
-                'id' => $id
+                'room' => $room
             ]);
         }
 

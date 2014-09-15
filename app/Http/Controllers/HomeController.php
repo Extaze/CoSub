@@ -12,7 +12,8 @@ class HomeController extends Controller
         if (Auth::check())
         {
             return view('index', [
-                'yourRoomMembers' => RoomMember::where('user', '=', Auth::user()->id)->get()
+                'yourRoomMembers' => RoomMember::where('user', '=', Auth::user()->id)->get(),
+                'lastRooms' => Room::take(10)->get()
             ]);
         }
         return view('index', [

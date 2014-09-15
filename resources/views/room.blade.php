@@ -26,7 +26,11 @@
 @stop
 
 @section('content')
-    <h1>{{ trans('cosub.yourrooms') }}</h1>
+    <h1>
+        <a href="{{ route('rooms.rooms') }}">{{ trans('cosub.rooms') }}</a>
+        &rsaquo;
+        {{ $room->name }}
+    </h1>
     @if ($errors->any())
         <p class="alert alert-danger">
             @foreach($errors->all() as $error)
@@ -34,19 +38,26 @@
             @endforeach
         </p>
     @endif
+
     <p>Guest mode</p>
     <div class="sub row">
+        <div>
+            <div class="sub-text col-sm-6">
+                The people were watching
+            </div>
+            <div class="sub-translated col-sm-6">
+                Les gens observaient
+            </div>
+        </div>
+        <div>
+            <textarea class="form-control" id="translation"></textarea>
+        </div>
         <div class="sub-buttons">
-            <div class="sub-button transition"><i class="fa fa-comments"></i></div>
-            <div class="sub-button transition"><i class="fa fa-thumbs-up"></i></div>
-            <div class="sub-button transition"><i class="fa fa-clock-o"></i></div>
-            <div class="sub-button transition"><i class="fa fa-check-circle"></i></div>
-        </div>
-        <div class="sub-text">
-            The people were watching
-        </div>
-        <div class="sub-translated">
-            Les gens regardaient
+            <span>{{ trans('cosub.setAs') }}</span>
+            <span class="sub-button transition label label-default">{{ trans('cosub.lock') }}</span>
+            <span class="sub-button transition label label-warning">{{ trans('cosub.wrong') }}</span>
+            <span class="sub-button transition label label-info">{{ trans('cosub.timed') }}</span>
+            <span class="sub-button transition label label-success">{{ trans('cosub.checked') }}</span>
         </div>
     </div>
 @stop

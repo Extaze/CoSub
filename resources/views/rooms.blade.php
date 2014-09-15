@@ -26,7 +26,11 @@
 @stop
 
 @section('content')
-    <h1>{{ trans('cosub.rooms') }}</h1>
+    @if (\Auth::check())
+        <h1>{{ trans('cosub.yourrooms') }}</h1>
+    @else
+        <h1>{{ trans('cosub.rooms') }}</h1>
+    @endif
     @if ($errors->any())
         <p class="alert alert-danger">
             @foreach($errors->all() as $error)
