@@ -7,6 +7,8 @@
 @stop
 
 @section('js')
+    {{-- {{}} escape by default. Have to use echo --}}
+    <script>window.activity = <?php echo($activity); ?></script>
     <script>window.progress = {{ $progressPercent }};</script>
     <script>window.errors = {{ $errorsPercent }};</script>
     <script>window.locked = {{ $lockedPercent }};</script>
@@ -64,6 +66,9 @@
                 <canvas class="pie" id="pie-locked" width="110" height="110"></canvas>
                 <p><strong>{{ trans('cosub.pie-locked') }}</strong></p>
             </div>
+        </div>
+        <div class="row">
+            <canvas id="activity" height="200"></canvas>
         </div>
     </div>
     <div class="page page2">
