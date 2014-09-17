@@ -54,6 +54,7 @@
     </div>
     <div class="container page page1">
         <div class="row">
+            <h2>{{ trans('cosub.stats') }}</h2>
             <div class="col-xs-4 text-center">
                 <canvas class="pie" id="pie-progress" width="110" height="110"></canvas>
                 <p><strong>{{ trans('cosub.pie-progress') }}</strong></p>
@@ -67,7 +68,9 @@
                 <p><strong>{{ trans('cosub.pie-locked') }}</strong></p>
             </div>
         </div>
+
         <div class="row">
+            <h2>{{ trans('cosub.activity') }}</h2>
             <canvas id="activity" height="200"></canvas>
         </div>
     </div>

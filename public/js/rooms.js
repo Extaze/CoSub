@@ -67,7 +67,7 @@ for (var i = 0; i < keys.length; i++) {
     values.push(activity[keys[i]]);
 }
 var realActivity = {
-    labels: Object.keys(activity),
+    labels: Object.keys(activity).reverse(),
     datasets: [
         {
             label: '',
@@ -78,7 +78,7 @@ var realActivity = {
             pointHighlightFill: 'rgba(151,187,205,1)',
             pointHighlightStroke: '#FFF',
             pointHitDetectionRadius: 0,
-            data: values
+            data: values.reverse()
         }
     ]
 };

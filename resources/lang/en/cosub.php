@@ -40,7 +40,9 @@ return [
     'translate'                     => 'Translate',
     'pie-progress'                  => 'Progress',
     'pie-errors'                    => 'Errors',
-    'pie-locked'                    => 'Locked'
+    'pie-locked'                    => 'Locked',
+    'stats'                         => 'Stats',
+    'activity'                      => 'Activity'
 ];
 
 ?>
