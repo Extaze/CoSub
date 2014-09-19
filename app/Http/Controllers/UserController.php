@@ -27,8 +27,7 @@ class UserController extends Controller
 
     public function postLogin(LoginFormRequest $request)
     {
-        if ($this->auth->attempt($request->only('username', 'password')))
-        {
+        if ($this->auth->attempt($request->only('username', 'password'), true)) {
             return redirect('/');
         }
 
