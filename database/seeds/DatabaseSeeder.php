@@ -140,7 +140,39 @@ class SubTableSeeder extends Seeder
             'frame'      => 1,
             'original'   => 'Hi',
             'translated' => 'Salut',
-            'status'     => 'original',
+            'status'     => 'checked',
+            'timed'      => false
+        ]);
+        Sub::create([
+            'room'       => 1,
+            'frame'      => 1,
+            'original'   => 'Hi',
+            'translated' => 'Salut',
+            'status'     => 'checked',
+            'timed'      => false
+        ]);
+        Sub::create([
+            'room'       => 1,
+            'frame'      => 1,
+            'original'   => 'Hi',
+            'translated' => 'Salut',
+            'status'     => 'checked',
+            'timed'      => false
+        ]);
+        Sub::create([
+            'room'       => 1,
+            'frame'      => 1,
+            'original'   => 'Hi',
+            'translated' => 'Salut',
+            'status'     => 'wrong',
+            'timed'      => false
+        ]);
+        Sub::create([
+            'room'       => 1,
+            'frame'      => 1,
+            'original'   => 'Hi',
+            'translated' => 'Salut',
+            'status'     => 'locked',
             'timed'      => false
         ]);
         Sub::create([

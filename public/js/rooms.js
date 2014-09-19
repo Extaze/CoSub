@@ -1,27 +1,29 @@
 var $buttonDetail    = $('.buttonDetail');
 var $buttonTranslate = $('.buttonTranslate');
-var $page1           = $('.page1');
-var $page2           = $('.page2');
+var $wrapper         = $('.slider-wrapper');
 var $h3              = $('.modeButtons > h3');
 var $pieProgress     = $('#pie-progress');
 var $pieErrors       = $('#pie-errors');
 var $pieLocked       = $('#pie-locked');
 var $activityGraph   = $('#activity');
+var $subs            = $('.sub');
 
 $buttonDetail.click(function (e) {
     e.preventDefault();
     $h3.first().addClass('active');
     $h3.last().removeClass('active');
-    $page1.removeClass('fadeOutLeft').addClass('animated fadeInLeft');
-    $page2.addClass('animated fadeOutLeft');
+    $wrapper.css('left', '0');
+
+    $wrapper.css('overflow', 'hidden');
 });
 
 $buttonTranslate.click(function (e) {
     e.preventDefault();
     $h3.first().removeClass('active');
     $h3.last().addClass('active');
-    $page1.addClass('animated fadeOutLeft');
-    $page2.removeClass('fadeOutLeft').addClass('animated fadeInLeft');
+    $wrapper.css('left', '-' + ($wrapper.width() / 2) + 'px');
+
+    $wrapper.css('overflow', 'visible');
 });
 
 // Charts
