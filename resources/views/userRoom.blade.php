@@ -52,49 +52,55 @@
             <div class="bottomSep transition"></div>
         </h3>
     </div>
-    <div class="container page page1">
-        <div class="row">
-            <h2>{{ trans('cosub.stats') }}</h2>
-            <div class="col-xs-4 text-center">
-                <canvas class="pie" id="pie-progress" width="110" height="110"></canvas>
-                <p><strong>{{ trans('cosub.pie-progress') }}</strong></p>
-            </div>
-            <div class="col-xs-4 text-center">
-                <canvas class="pie" id="pie-errors" width="110" height="110"></canvas>
-                <p><strong>{{ trans('cosub.pie-errors') }}</strong></p>
-            </div>
-            <div class="col-xs-4 text-center">
-                <canvas class="pie" id="pie-locked" width="110" height="110"></canvas>
-                <p><strong>{{ trans('cosub.pie-locked') }}</strong></p>
-            </div>
-        </div>
+    <div class="slider-container">
+        <div class="slider-wrapper transition">
+            <div class="slider-item page1">
+                <div class="row">
+                    <h2>{{ trans('cosub.stats') }}</h2>
+                    <div class="col-xs-4 text-center">
+                        <canvas class="pie" id="pie-progress" width="110" height="110"></canvas>
+                        <p><strong>{{ trans('cosub.pie-progress') }}</strong></p>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <canvas class="pie" id="pie-errors" width="110" height="110"></canvas>
+                        <p><strong>{{ trans('cosub.pie-errors') }}</strong></p>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                        <canvas class="pie" id="pie-locked" width="110" height="110"></canvas>
+                        <p><strong>{{ trans('cosub.pie-locked') }}</strong></p>
+                    </div>
+                </div>
 
-        <div class="row">
-            <h2>{{ trans('cosub.activity') }}</h2>
-            <canvas id="activity" height="200"></canvas>
-        </div>
-    </div>
-    <div class="page page2">
-        <div class="sub row">
-            <div>
-                <div class="sub-text col-sm-6">
-                    The people were watching
-                </div>
-                <div class="sub-translated col-sm-6">
-                    Les gens observaient
+                <div class="row">
+                    <h2>{{ trans('cosub.activity') }}</h2>
+                    <canvas id="activity" height="200"></canvas>
                 </div>
             </div>
-            <div>
-                <textarea class="form-control" id="translation"></textarea>
+            <div class="slider-item page2">
+                @foreach($subs as $sub)
+                    <div class="sub">
+                        <div>
+                            <div class="sub-text col-sm-6">
+                                The people were watching
+                            </div>
+                            <div class="sub-translated col-sm-6">
+                                Les gens observaient
+                            </div>
+                        </div>
+                        <div>
+                            <textarea class="form-control" id="translation"></textarea>
+                        </div>
+                        <div class="sub-buttons">
+                            <span>{{ trans('cosub.setAs') }}</span>
+                            <span class="sub-button transition label label-default">{{ trans('cosub.lock') }}</span>
+                            <span class="sub-button transition label label-warning">{{ trans('cosub.wrong') }}</span>
+                            <span class="sub-button transition label label-info">{{ trans('cosub.timed') }}</span>
+                            <span class="sub-button transition label label-success">{{ trans('cosub.checked') }}</span>
+                        </div>
+                        <button class="btn btn-success btn-lg center-block translate">{{ trans('cosub.translate') }}</button>
+                    </div>
+                @endforeach
             </div>
-            <div class="sub-buttons">
-                <span>{{ trans('cosub.setAs') }}</span>
-                <span class="sub-button transition label label-default">{{ trans('cosub.lock') }}</span>
-                <span class="sub-button transition label label-warning">{{ trans('cosub.wrong') }}</span>
-                <span class="sub-button transition label label-info">{{ trans('cosub.timed') }}</span>
-                <span class="sub-button transition label label-success">{{ trans('cosub.checked') }}</span>
-            </div>
-            <button class="btn btn-success btn-lg center-block translate">{{ trans('cosub.translate') }}</button>
         </div>
     </div>
 @stop
