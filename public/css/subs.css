@@ -2,12 +2,22 @@
     background-color: #fafafa;
     border: 1px solid #6FB5FF;
     border-bottom-width: 3px;
+    cursor: pointer;
     margin-bottom: 15px;
 }
 
 .sub-text, .sub-translated {
     height: 60px;
     padding: 10px;
+}
+
+.extras {
+    height: 0;
+    overflow: hidden;
+}
+
+.extras.active {
+    height: 135px;
 }
 
 .sub-buttons {
@@ -19,6 +29,10 @@
     display: inline-block;
     height: 20px;
     line-height: 15px;
+}
+
+.sub-button.active {
+    text-decoration: underline;
 }
 
 .sub textarea {

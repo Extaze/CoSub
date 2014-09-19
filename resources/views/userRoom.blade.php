@@ -14,6 +14,7 @@
     <script>window.locked = {{ $lockedPercent }};</script>
     <script src="{{ asset('vendor/chartjs/chart.min.js') }}"></script>
     <script src="{{ asset('js/rooms.js') }}"></script>
+    <script src="{{ asset('js/subs.js') }}"></script>
 @stop
 
 @section('navbar')
@@ -76,28 +77,47 @@
                     <canvas id="activity" height="200"></canvas>
                 </div>
             </div>
+
             <div class="slider-item page2">
                 @foreach($subs as $sub)
                     <div class="sub">
-                        <div>
+                        <div class="row">
                             <div class="sub-text col-sm-6">
-                                The people were watching
+                                {{ $sub->original }}
                             </div>
                             <div class="sub-translated col-sm-6">
-                                Les gens observaient
+                                {{ $sub->translated }}
                             </div>
                         </div>
-                        <div>
-                            <textarea class="form-control" id="translation"></textarea>
+                        <div class="extras transition">
+                            <div>
+                                <textarea class="form-control translation"></textarea>
+                            </div>
+                            <div class="sub-buttons">
+                                <span>{{ trans('cosub.setAs') }}</span>
+                                @if ($sub->status === 'locked')
+                                    <span class="sub-button transition label label-default active">{{ trans('cosub.lock') }}</span>
+                                @else
+                                    <span class="sub-button transition label label-default">{{ trans('cosub.lock') }}</span>
+                                @endif
+                                @if ($sub->status === 'wrong')
+                                    <span class="sub-button transition label label-warning active">{{ trans('cosub.wrong') }}</span>
+                                @else
+                                    <span class="sub-button transition label label-warning">{{ trans('cosub.wrong') }}</span>
+                                @endif
+                                @if ($sub->status === 'timed')
+                                    <span class="sub-button transition label label-info active">{{ trans('cosub.timed') }}</span>
+                                @else
+                                    <span class="sub-button transition label label-info">{{ trans('cosub.timed') }}</span>
+                                @endif
+                                @if ($sub->status === 'checked')
+                                    <span class="sub-button transition label label-success active">{{ trans('cosub.checked') }}</span>
+                                @else
+                                    <span class="sub-button transition label label-success">{{ trans('cosub.checked') }}</span>
+                                @endif
+                            </div>
+                            <button class="btn btn-success btn-lg center-block translate">{{ trans('cosub.translate') }}</button>
                         </div>
-                        <div class="sub-buttons">
-                            <span>{{ trans('cosub.setAs') }}</span>
-                            <span class="sub-button transition label label-default">{{ trans('cosub.lock') }}</span>
-                            <span class="sub-button transition label label-warning">{{ trans('cosub.wrong') }}</span>
-                            <span class="sub-button transition label label-info">{{ trans('cosub.timed') }}</span>
-                            <span class="sub-button transition label label-success">{{ trans('cosub.checked') }}</span>
-                        </div>
-                        <button class="btn btn-success btn-lg center-block translate">{{ trans('cosub.translate') }}</button>
                     </div>
                 @endforeach
             </div>

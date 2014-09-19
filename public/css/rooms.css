@@ -60,7 +60,7 @@
 
 .slider-wrapper {
     overflow: hidden;
-    height: 600px;
+    height: 755px;
     position: relative;
     left: 0px;
     width: 200%;
@@ -85,6 +85,7 @@
     }
 
     .slider-wrapper {
+        height: 500px;
         width: 2280px;
     }
 
@@ -130,9 +131,13 @@
     margin: 0 auto;
     min-width: 145px;
 }
-@media (min-width: 500px) {
+@media (min-width: 521px) {
     .page1 > .row > .col-xs-4 {
        float: left;
+    }
+
+    .slider-wrapper {
+        height: 495px;
     }
 }
 
