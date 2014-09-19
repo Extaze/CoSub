@@ -1,8 +1,8 @@
 <?php namespace App\Http\Controllers;
 
-use Auth;
 use App\Room;
 use App\User;
+use Auth;
 use DateTime;
 use Illuminate\Routing\Controller;
 
@@ -52,12 +52,12 @@ class RoomsController extends Controller
         }
 
         return view($view, [
-            'room' => $room,
-            'subs' => $subs,
-            'activity' => json_encode($activity),
+            'room'            => $room,
+            'subs'            => $subs,
+            'activity'        => json_encode($activity),
             'progressPercent' => $progressCount / $totalSubs * 100,
-            'errorsPercent' => $errorsCount / $totalSubs * 100,
-            'lockedPercent' =>$lockedCount / $totalSubs * 100
+            'errorsPercent'   => $errorsCount / $totalSubs * 100,
+            'lockedPercent'   => $lockedCount / $totalSubs * 100
         ]);
     }
 
