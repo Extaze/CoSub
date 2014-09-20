@@ -54,3 +54,16 @@ $statusButtons.off('click').click(function () {
         $this.parent().parent().parent().attr('class', 'sub active transition ' + status);
     });
 });
+
+$timedButtons.off('click').click(function () {
+    var $this  = $(this);
+    var id     = $this.parent().parent().parent().attr('data-id');
+    var status = ($this.hasClass('active')) ? '0' : '1';
+
+    $.post('/sub/timed', {
+        id: id,
+        status: status
+    }, function () {
+        $this.toggleClass('active');
+    });
+});
