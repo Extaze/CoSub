@@ -1,6 +1,7 @@
 var $subs          = $('.sub');
 var $textareas     = $subs.find('textarea');
 var $statusButtons = $('.sub-buttons .sub-button').not('[data-status="timed"]');
+var $timedButtons  = $('.sub-buttons .sub-button[data-status="timed"]');
 
 $subs.first().addClass('active').children('.extras').addClass('active');
 
@@ -36,6 +37,14 @@ $statusButtons.off('click').click(function () {
     var $others = $this.siblings();
     var status = $this.attr('data-status');
     var id     = $this.parent().parent().parent().attr('data-id');
+
+    // Reset status
+    if ($this.hasClass('active') && status !== 'original') {
+        $this = $others.filter('[data-status="original"]');
+        $others = $this.siblings();
+        status = 'original';
+    }
+
     $.post('/sub/status', {
         id: id,
         status: status
