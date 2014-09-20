@@ -92,7 +92,9 @@ function onResize () {
         $activityGraph = $('#activity');
         $activityGraph[0].width = $activityGraph.parent().width();
         $activityGraph.attr('style', '')
-        new Chart($activityGraph[0].getContext('2d')).Line(realActivity);
+        new Chart($activityGraph[0].getContext('2d')).Line(realActivity, {
+            bezierCurve : false
+        });
     }
 
     setTimeout(onResize, 200);

@@ -35,6 +35,7 @@ return [
     'wrong'                         => 'Wrong',
     'timed'                         => 'Timed',
     'checked'                       => 'Checked',
+    'original'                      => 'Original',
     'detailMode'                    => 'Room details',
     'translateMode'                 => 'Translation',
     'translate'                     => 'Translate',

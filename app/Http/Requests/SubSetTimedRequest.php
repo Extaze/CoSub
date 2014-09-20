@@ -3,13 +3,13 @@
 use Illuminate\Foundation\Http\FormRequest;
 use Response;
 
-class SubSetTranslationRequest extends FormRequest
+class SubSetTimedRequest extends FormRequest
 {
     public function rules()
     {
         return [
-            'id'          => 'required|exists:subs,id',
-            'translation' => 'required'
+            'id'     => 'required|exists:subs,id',
+            'status' => 'required|boolean'
         ];
     }
 

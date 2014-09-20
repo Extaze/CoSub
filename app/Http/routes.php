@@ -54,4 +54,10 @@ Route::group(['before' => 'auth'], function () {
             'uses' => 'UserController@getLogout'
         ]);
     });
+
+    Route::group(['prefix' => '/sub/'], function () {
+        Route::any('/status', 'SubsController@postStatus');
+        Route::post('/translate', 'SubsController@postTranslation');
+        Route::post('/timed', 'SubsController@postTimed');
+    });
 });

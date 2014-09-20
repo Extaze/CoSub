@@ -8,8 +8,8 @@ class SubSetStatusRequest extends FormRequest
     public function rules()
     {
         return [
-            'id'     => 'required|exists:subs,id'
-            'status' => 'required|in:foo,bar'
+            'id'     => 'required|exists:subs,id',
+            'status' => 'required|in:original,translated,checked,wrong,locked'
         ];
     }
 

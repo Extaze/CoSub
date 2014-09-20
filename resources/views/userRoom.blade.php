@@ -80,7 +80,7 @@
 
             <div class="slider-item page2">
                 @foreach($subs as $sub)
-                    <div class="sub">
+                    <div class="sub transition {{ $sub->status }}" data-id="{{ $sub->id }}">
                         <div class="row">
                             <div class="sub-text col-sm-6">
                                 {{ $sub->original }}
@@ -96,24 +96,29 @@
                             <div class="sub-buttons">
                                 <span>{{ trans('cosub.setAs') }}</span>
                                 @if ($sub->status === 'locked')
-                                    <span class="sub-button transition label label-default active">{{ trans('cosub.lock') }}</span>
+                                    <span data-status="locked" class="sub-button transition label label-default active">{{ trans('cosub.lock') }}</span>
                                 @else
-                                    <span class="sub-button transition label label-default">{{ trans('cosub.lock') }}</span>
+                                    <span data-status="locked" class="sub-button transition label label-default">{{ trans('cosub.lock') }}</span>
                                 @endif
                                 @if ($sub->status === 'wrong')
-                                    <span class="sub-button transition label label-warning active">{{ trans('cosub.wrong') }}</span>
+                                    <span data-status="wrong" class="sub-button transition label label-warning active">{{ trans('cosub.wrong') }}</span>
                                 @else
-                                    <span class="sub-button transition label label-warning">{{ trans('cosub.wrong') }}</span>
+                                    <span data-status="wrong" class="sub-button transition label label-warning">{{ trans('cosub.wrong') }}</span>
                                 @endif
                                 @if ($sub->status === 'timed')
-                                    <span class="sub-button transition label label-info active">{{ trans('cosub.timed') }}</span>
+                                    <span data-status="timed" class="sub-button transition label label-info active">{{ trans('cosub.timed') }}</span>
                                 @else
-                                    <span class="sub-button transition label label-info">{{ trans('cosub.timed') }}</span>
+                                    <span data-status="timed" class="sub-button transition label label-info">{{ trans('cosub.timed') }}</span>
                                 @endif
                                 @if ($sub->status === 'checked')
-                                    <span class="sub-button transition label label-success active">{{ trans('cosub.checked') }}</span>
+                                    <span data-status="checked" class="sub-button transition label label-success active">{{ trans('cosub.checked') }}</span>
                                 @else
-                                    <span class="sub-button transition label label-success">{{ trans('cosub.checked') }}</span>
+                                    <span data-status="checked" class="sub-button transition label label-success">{{ trans('cosub.checked') }}</span>
+                                @endif
+                                @if ($sub->status === 'original')
+                                    <span data-status="original" class="sub-button transition label label-primary active">{{ trans('cosub.original') }}</span>
+                                @else
+                                    <span data-status="original" class="sub-button transition label label-primary">{{ trans('cosub.original') }}</span>
                                 @endif
                             </div>
                             <button class="btn btn-success btn-lg center-block translate">{{ trans('cosub.translate') }}</button>
