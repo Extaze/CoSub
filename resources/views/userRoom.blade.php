@@ -91,7 +91,7 @@
                         </div>
                         <div class="extras transition">
                             <div>
-                                <textarea class="form-control translation"></textarea>
+                                <textarea class="form-control translation">{{ $sub->translated }}</textarea>
                             </div>
                             <div class="sub-buttons">
                                 <span>{{ trans('cosub.setAs') }}</span>

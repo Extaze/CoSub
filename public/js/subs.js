@@ -1,7 +1,8 @@
-var $subs          = $('.sub');
-var $textareas     = $subs.find('textarea');
-var $statusButtons = $('.sub-buttons .sub-button').not('[data-status="timed"]');
-var $timedButtons  = $('.sub-buttons .sub-button[data-status="timed"]');
+var $subs             = $('.sub');
+var $textareas        = $subs.find('textarea');
+var $statusButtons    = $('.sub-buttons .sub-button').not('[data-status="timed"]');
+var $timedButtons     = $('.sub-buttons .sub-button[data-status="timed"]');
+var $translateButtons = $('.translate');
 
 $subs.first().addClass('active').children('.extras').addClass('active');
 
@@ -55,6 +56,7 @@ $statusButtons.off('click').click(function () {
     });
 });
 
+// Timed subs
 $timedButtons.off('click').click(function () {
     var $this  = $(this);
     var id     = $this.parent().parent().parent().attr('data-id');
@@ -65,5 +67,23 @@ $timedButtons.off('click').click(function () {
         status: status
     }, function () {
         $this.toggleClass('active');
+    });
+});
+
+// Translate
+$translateButtons.off('click').click(function () {
+    var $this        = $(this);
+    var id           = $this.parent().parent().attr('data-id');
+    var translation  = $this.parent().parent().find('textarea').val();
+    var $translated  = $this.parent().parent().find('.sub-translated');
+
+    // Revert status to nothing
+    $this.prev().find('[data-status="original"]').click();
+
+    $.post('/sub/translate', {
+        id: id,
+        translation: translation
+    }, function () {
+        $translated.text(translation);
     });
 });

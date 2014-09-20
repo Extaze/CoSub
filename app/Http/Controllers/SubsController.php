@@ -25,7 +25,7 @@ class SubsController extends Controller {
     public function postTranslation(SubSetTranslationRequest $request)
     {
         $sub = Sub::find($request->id);
-        $sub->translation = $request->translation;
+        $sub->translated = $request->translation;
         $sub->save();
     }
 }
