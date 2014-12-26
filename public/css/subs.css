@@ -53,8 +53,12 @@
 .sub textarea {
     float: left;
     margin: 0 0 0 5px;
-    resize: vertical;
+    resize: none;
     width: calc(100% - 10px);
+}
+
+.sub textarea:focus {
+    box-shadow: none;
 }
 
 .translate {
